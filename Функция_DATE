@@ -1,0 +1,13 @@
+/*
+Запрос возвращает список заказов, сделанных на католическое Рождество 2010 года.
+Тут используется функция DATE, которая позволяет не писать в запросе время (00:00:00).
+*/
+SELECT
+InvoiceDate,
+BillingCity,
+BillingCountry,
+Total
+FROM
+invoices
+WHERE
+DATE(InvoiceDate) = '2010-12-25'
