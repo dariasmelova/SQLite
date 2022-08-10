@@ -1,0 +1,25 @@
+/*
+Запрос соединяет таблицы "invoices" (под псевдонимом "i"), "customers" (под псевдонимом "c") и "employees" (под псевдонимом "e").
+Результат возвращает записи, имеющие соответствия вo всех таблицах.
+*/
+SELECT
+e.FirstName,
+e.LastName,
+e.EmployeeId,
+c.LastName,
+c.FirstName,
+c.SupportRepId,
+i.CustomerId,
+i.Total
+FROM
+invoices AS i
+INNER JOIN
+customers AS c
+ON
+i.CustomerId = c.CustomerId
+INNER JOIN
+employees AS e
+ON
+c.SupportRepId = e.EmployeeId
+ORDER BY 
+Total DESC
