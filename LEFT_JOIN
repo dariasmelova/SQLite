@@ -1,0 +1,15 @@
+/*
+Запрос осуществляет левое внешнее соединение таблицы "artists" (под псевдонимом "ar") и "alboms" (под псевдонимом "al").
+Результат возвращает все записи из таблицы "слева" (в данном случае это "artists"). В тех случаях, где одной их записей соответствия в "правой" таблице нет, выводится NULL.
+*/
+SELECT
+ar.ArtistId AS [Artist from 'artists'],
+al.ArtistId AS [Artist from 'albums'],
+ar.Name AS [Artist Name],
+al.Title AS [Album]
+FROM
+artists AS ar
+LEFT OUTER JOIN
+albums AS al
+ON
+ar.ArtistId = al.ArtistId
