@@ -1,0 +1,14 @@
+/*
+CREATED BY: Daria Smelova
+CREATED ON: 10 August 2022
+DESCRIPTION: Запрос возвращает список клиентов (фамилии в алфавитном порядке, имена, телефоны) - первые три записи в виде таблицы со столбцами LAST NAME, FIRST NAME, CELL (псевдонимы)
+*/
+SELECT
+LastName AS [LAST NAME],
+FirstName AS 'FIRST NAME',
+Phone CELL
+FROM
+customers
+ORDER BY
+LastName ASC
+LIMIT 3
