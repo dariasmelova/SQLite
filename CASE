@@ -1,0 +1,21 @@
+/*
+Запрос возвращает список сумм заказов (начиная с самых старых) с определением типа покупки в колонке PurchaseType (END AS PurchaseType).
+Для определения типа используются 4 диапазона с оператором CASE: 
+baseline, когда меньше 2.00 (WHEN Total < 2.00 THEN 'Baseline Purchase') 
+low, когда от 2.00 до 6.99 (WHEN Total BETWEEN 2.00 AND 6.99 THEN 'Low Purchase')
+target, когда от 7.00 до 15.00 (WHEN Total BETWEEN 7.00 AND 15.00 THEN 'Target Purchase')
+top, когда больше 15.00 (ELSE 'Top Purchase)
+*/
+SELECT
+InvoiceDate,
+Total,
+CASE 
+WHEN Total < 2.00 THEN 'Baseline Purchase'
+WHEN Total BETWEEN 2.00 AND 6.99 THEN 'Low Purchase'
+WHEN Total BETWEEN 7.00 AND 15.00 THEN 'Target Purchase'
+ELSE 'Top Purchase'
+END AS PurchaseType
+FROM
+invoices
+ORDER BY
+InvoiceDate
