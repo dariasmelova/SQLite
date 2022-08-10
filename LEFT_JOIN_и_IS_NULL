@@ -1,0 +1,18 @@
+/*
+Запрос возвращает список артистов, у которых нет ни одного альбома в продаже.
+Запрос осуществляет левое внешнее соединение таблицы "artists" (под псевдонимом "ar") и "albums" (под псевдонимом "al").
+Берутся все записи из таблицы "слева" (в данном случае это "artists"), но выводятся только те из них, которым не нашлось соответствия в "правой" таблице ("albums").
+*/
+SELECT
+ar.ArtistId AS [Artist from 'artists'],
+al.ArtistId AS [Artist from 'albums'],
+ar.Name AS [Artist Name],
+al.Title AS [Album]
+FROM
+artists AS ar
+LEFT OUTER JOIN
+albums AS al
+ON
+ar.ArtistId = al.ArtistId
+WHERE
+al.ArtistId Is NULL
