@@ -1,0 +1,6 @@
+-- запрос, возвращающий ошибку
+SELECT
+*
+FROM
+products
+LIMIT 10
