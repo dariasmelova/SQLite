@@ -1,0 +1,15 @@
+/*
+Запрос возвращает суммы счетов (по убыванию): сначала исходную цифру, а затем результаты выполнения с ней арифметических действий 
+в виде таблицы со столбцами, названными как арифметические операторы
+*/
+SELECT
+Total AS [Original Amount],
+Total + 10 AS [Addition],
+Total - 10 AS [Subtraction],
+Total / 10 [Division],
+Total * 10 AS [Multiplication],
+Total % 10 AS [Modulo]
+FROM
+invoices
+ORDER BY
+Total DESC
