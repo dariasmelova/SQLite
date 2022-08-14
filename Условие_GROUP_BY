@@ -1,0 +1,9 @@
+Запрос возвращает продажи по городам (группирует по городам значение суммы в столбце)
+*/
+SELECT
+BillingCity,
+SUM (Total)
+FROM
+invoices
+GROUP BY
+BillingCity
