@@ -1,0 +1,20 @@
+/* 
+Запрос возвращает итоговые продажи по городам США больше 35.00 по каждому городу.
+В данном случае используется и условие HAVING, и условие WHERE.
+GROUP BY группирует результаты сначала по странам, потом по городам.
+*/
+SELECT
+BillingCountry,
+BillingCity,
+SUM (Total)
+FROM
+invoices
+WHERE
+BillingCountry = 'USA'
+GROUP BY
+BillingCountry,
+BillingCity
+HAVING
+SUM (Total) > 35.00
+ORDER BY
+SUM (Total) DESC
