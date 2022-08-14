@@ -1,0 +1,11 @@
+/* 
+Запрос возвращает имена клиентов заглавными и строчными буквами.
+*/
+SELECT
+FirstName,
+UPPER(FirstName) AS 'UPPER',
+LOWER(FirstName) AS 'lower'
+FROM
+customers
+WHERE
+Country = 'USA'
