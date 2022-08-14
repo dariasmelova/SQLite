@@ -1,0 +1,16 @@
+/* 
+Запрос возвращает итоговые продажи больше 35.00 по каждому городу (группирует по городам значение суммы в столбце, если сумма больше 35.00).
+В данном случае используется условие HAVING (а не WHERE), так как фильтруется агрегат.
+HAVING всегда используется после GROUP BY.
+*/
+SELECT
+BillingCity,
+SUM (Total)
+FROM
+invoices
+GROUP BY
+BillingCity
+HAVING
+SUM (Total) > 35.00
+ORDER BY
+SUM (Total) DESC
