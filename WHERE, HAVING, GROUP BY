@@ -10,7 +10,7 @@ SUM (Total)
 FROM
 invoices
 WHERE
-BillingCountry = 'USA'
+BillingCountry IN ('USA', 'Canada') 
 GROUP BY
 BillingCountry,
 BillingCity
