@@ -1,0 +1,11 @@
+/* 
+Запрос возвращает возраст сотрудников.
+Для этого применяются функции STRFTIME, now и вычитание.
+*/
+SELECT
+LastName,
+STRFTIME('%Y-%m-%d','now') - STRFTIME('%Y-%m-%d',BirthDate) AS Age
+FROM
+employees
+ORDER BY
+Age
