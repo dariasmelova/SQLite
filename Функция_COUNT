@@ -1,0 +1,7 @@
+-- запрос определяет количество клиентов из США
+SELECT
+COUNT(LastName)
+FROM
+customers
+WHERE
+Country = 'USA'
