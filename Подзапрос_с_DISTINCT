@@ -1,0 +1,9 @@
+/*
+запрос возвращает список названий непопулярных треков (никто никогда их не заказывал)
+*/
+SELECT
+name
+FROM 
+tracks
+WHERE
+TrackId NOT IN (select distinct TrackId from invoice_items)
