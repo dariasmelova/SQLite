@@ -1,0 +1,16 @@
+/*
+Запрос возвращает суммы счетов меньше среднего счета
+*/
+SELECT
+InvoiceDate,
+BillingAddress,
+BillingCity,
+Total
+FROM
+invoices
+WHERE
+Total <
+(select avg(Total)
+from invoices)
+ORDER BY
+Total DESC
