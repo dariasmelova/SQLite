@@ -1,0 +1,9 @@
+/*
+Запрос возвращает список счетов с данными об отклонении суммы каждого счета от суммы среднего счета
+*/
+SELECT
+InvoiceDate,
+Total,
+ROUND(Total - (select avg(Total) from invoices),2) AS [Deviation from average]
+FROM
+invoices
