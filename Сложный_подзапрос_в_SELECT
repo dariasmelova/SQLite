@@ -1,0 +1,11 @@
+/*
+Запрос возвращает список средних продаж в каждом городе с информацией об их отклонении от средних мировых продаж
+*/
+SELECT
+BillingCity,
+ROUND(AVG(Total),2) AS [City Average],
+ROUND(avg(Total) - (select avg(Total) from invoices),2) AS [Deviation from average]
+FROM
+invoices
+GROUP BY
+BillingCity
