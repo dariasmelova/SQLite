@@ -1,0 +1,15 @@
+*/
+Этот запрос возвращает даты и суммы счетов (с адресом и городом), которые больше среднего счета
+Тут используется подзапрос, который вызывает представление V_AVG_INVOICE
+*/
+SELECT
+InvoiceDate,
+BillingAddress,
+BillingCity,
+total
+FROM
+invoices
+WHERE
+Total>(SELECT * FROM V_AVG_INVOICE)
+ORDER BY
+total
