@@ -1,0 +1,6 @@
+/*
+Данные следуют в строгом порядке, при отсутствии данных указывается ''
+*/
+INSERT INTO
+employees
+VALUES ('9', 'Martin', 'Ricky', 'Sales Support Agent', '2', '1975-02-07', '2018-01-05', '123 Houston St', 'New York', 'NY', 'United States', '11201', '(347) 525-85-88', '', 'rmartin@gamil.com')
