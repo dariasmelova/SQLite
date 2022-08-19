@@ -1,0 +1,9 @@
+/*
+Данный запрос создает представление (view) c помощью "CREATE VIEW <V_name> AS"
+Представление - это сохраненный запрос для многократного использования (сам по себе или внутри другого запроса)
+*/
+CREATE VIEW V_AVG_INVOICE AS
+SELECT
+ROUND(Avg(Total),2)
+FROM
+invoices
